@@ -27,6 +27,7 @@ func initDB() (db *gorm.DB) {
 	}
 
 	DNS := os.Getenv("NAME") + ":" + os.Getenv("PASS") + "@" + os.Getenv("PROTOCOL") + "/" + os.Getenv("DB_NAME") + "?charset=utf8&parseTime=True&loc=Local"
+	fmt.Println(DNS)
 
 	db, err = gorm.Open(mysql.Open(DNS), &gorm.Config{})
 
